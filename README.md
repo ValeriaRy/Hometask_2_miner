@@ -1,2 +1,1 @@
-# Hometask_2_miner
-miner
+http://valeriary.github.io/Hometask_2_miner/
