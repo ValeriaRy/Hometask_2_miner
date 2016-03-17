@@ -19,14 +19,14 @@ function clickAnyCell(newTable, array) {
 function doSomething(e, table, matrix) {
 	e.preventDefault();
 	if ((e.currentTarget !== e.target) && (endGame() !== "end")) {
-			if (e.type === 'click') {
-		    	defineOpenCells(e.target, matrix);
-				checkBomb(e.target, matrix);
-			}
+		if (e.type === 'click') {
+			defineOpenCells(e.target, matrix);
+			checkBomb(e.target, matrix);
+		}
 			
-			if (e.type === 'contextmenu') {
-    			determineBomb(e.target);
-			}
+		if (e.type === 'contextmenu') {
+			determineBomb(e.target);
+		}
 	}
     	e.stopPropagation();
 }
