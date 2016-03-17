@@ -18,8 +18,7 @@ function clickAnyCell(newTable, array) {
 
 function doSomething(e, table, matrix) {
 	e.preventDefault();
-	if (e.currentTarget !== e.target) {
-		if (endGame() !== "end") {
+	if ((e.currentTarget !== e.target) && (endGame() !== "end")) {
 			if (e.type === 'click') {
 		    	defineOpenCells(e.target, matrix);
 				checkBomb(e.target, matrix);
@@ -28,9 +27,8 @@ function doSomething(e, table, matrix) {
 			if (e.type === 'contextmenu') {
     			determineBomb(e.target);
 			}
-		}
 	}
-    e.stopPropagation();
+    	e.stopPropagation();
 }
 
 function endGame() {
@@ -42,13 +40,13 @@ function endGame() {
 }
  
 function defineOpenCells(openCell, matrix) {
-    var x = openCell.getAttribute("data-i");
+    	var x = openCell.getAttribute("data-i");
 	var y = openCell.getAttribute("data-j");
 	if (openCell.className === "bomb") {
 		currentNumberBombs = currentNumberBombs + 1;
 		strInformation();
 	} 
-    defineVictory(openCell);
+    	defineVictory(openCell);
 	openCell.className = "open";
 	if (matrix[+x][+y] === 0) {
 		openEmptySpace(+x, +y, matrix);
