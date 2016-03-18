@@ -1,17 +1,17 @@
 "use strict"
 
 function createTable(){
-		verifyExistence(formFinalField());
+	verifyExistence(formFinalField());
 }
 
 function verifyExistence(array) {
 	var removeTable = document.getElementById("sapper");
 	if (removeTable) {
 		removeTable.parentNode.removeChild(removeTable);
-    }
-    drawingTable(array);
-    newGame();
-    strInformation();
+	}
+	drawingTable(array);
+	newGame();
+	strInformation();
 }
 
 function drawingTable(matrix) {
@@ -31,15 +31,15 @@ function drawingTable(matrix) {
 }
 
 function createEmptyField() {
-    var array = new Array(FIELD_LENGTH);
-    for(var i = 0; i < FIELD_LENGTH; i++) {
-        array[i] = new Array(FIELD_WIDTH);
-        for(var j = 0; j < array[i].length; j++) {
-            array[i][j] = 0;
-        }
-    }
-    
-    return array;
+	var array = new Array(FIELD_LENGTH);
+	for(var i = 0; i < FIELD_LENGTH; i++) {
+		array[i] = new Array(FIELD_WIDTH);
+		for(var j = 0; j < array[i].length; j++) {
+			array[i][j] = 0;
+		}
+	}
+		    
+	return array;
 }
 
 function makeBomb(matrix) { 
